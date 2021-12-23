@@ -4,10 +4,9 @@
 # In[9]:
 
 
-from fer import FER
+#from fer import FER
 import matplotlib.pyplot as plt
 import streamlit as st
-from PIL import Image, ImageOps
 import imageio
 st.write('''
 #  Emotion Detector

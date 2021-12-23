@@ -21,7 +21,6 @@ else:
   detector = FER(mtcnn=True)
   result = detector.detect_emotions(image)
   st.write(result)
-  st.image(image, use_column_width=True)
 
 
 # In[ ]:

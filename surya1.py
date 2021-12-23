@@ -4,7 +4,7 @@
 # In[9]:
 
 
-#from fer import FER
+from fer import FER
 import matplotlib.pyplot as plt
 import streamlit as st
 import imageio

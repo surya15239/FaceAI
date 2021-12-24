@@ -27,7 +27,7 @@ else:
   # Use the top Emotion() function to call for the dominant emotion in the image
   dominant_emotion, emotion_score = emo_detector.top_emotion(image)
   st.write(dominant_emotion, emotion_score)
-  st.image(image, use_column_width=True)
+  
 
 # In[ ]:
 

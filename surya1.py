@@ -20,8 +20,7 @@ else:
   emo_detector = FER(mtcnn=True)
   captured_emotions = emo_detector.detect_emotions(image)
 # Print all captured emotions with the image
-  st.write(captured_emotions)
-  #plt.imshow(image)
+  st.write(sorted(captured_emotions)[1])#plt.imshow(image)
 
   # Use the top Emotion() function to call for the dominant emotion in the image
   dominant_emotion, emotion_score = emo_detector.top_emotion(image)

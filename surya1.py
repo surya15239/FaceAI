@@ -18,9 +18,14 @@ if file is None:
 else:
   image = imageio.imread(file)
   detector = FER(mtcnn=True)
-  result = detector.detect_emotions(image)
-  st.write(result)
+  captured_emotions = emo_detector.detect_emotions(image)
+# Print all captured emotions with the image
+  print(captured_emotions)
+  plt.imshow(image)
 
+  # Use the top Emotion() function to call for the dominant emotion in the image
+  dominant_emotion, emotion_score = emo_detector.top_emotion(image)
+  print(dominant_emotion, emotion_score)
 
 # In[ ]:
 

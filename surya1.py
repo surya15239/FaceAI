@@ -17,7 +17,7 @@ if file is None:
   st.text("Please upload an image file")
 else:
   image = imageio.imread(file)
-  detector = FER(mtcnn=True)
+  emo_detector = FER(mtcnn=True)
   captured_emotions = emo_detector.detect_emotions(image)
 # Print all captured emotions with the image
   print(captured_emotions)

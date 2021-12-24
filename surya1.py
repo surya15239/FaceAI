@@ -9,7 +9,6 @@ from PIL import Image
 import matplotlib.pyplot as plt
 import streamlit as st
 import imageio
-import cv2
 st.write('''
 #  Emotion Detector
 ''')
@@ -18,9 +17,7 @@ file = st.file_uploader("Please Upload an image of Person With Face", type=['jpg
 if file is None:
   st.text("Please upload an image file")
 else:
-  #image = imageio.imread(file)
-  file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
-  opencv_image = cv2.imdecode(file_bytes, 1)
+  image = imageio.imread(file)
   emo_detector = FER(mtcnn=True)
   captured_emotions = emo_detector.detect_emotions(opencv_image)
 # Print all captured emotions with the image

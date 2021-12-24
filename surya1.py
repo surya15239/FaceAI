@@ -19,7 +19,7 @@ if file is None:
 else:
   image = imageio.imread(file)
   emo_detector = FER(mtcnn=True)
-  captured_emotions = emo_detector.detect_emotions(opencv_image)
+  captured_emotions = emo_detector.detect_emotions(image)
 # Print all captured emotions with the image
   st.write(captured_emotions[0]['emotions'])
   #plt.imshow(image)

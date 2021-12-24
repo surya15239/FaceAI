@@ -9,6 +9,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 import streamlit as st
 import imageio
+import cv2
 st.write('''
 #  Emotion Detector
 ''')

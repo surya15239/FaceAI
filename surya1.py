@@ -17,9 +17,11 @@ file = st.file_uploader("Please Upload an image of Person With Face", type=['jpg
 if file is None:
   st.text("Please upload an image file")
 else:
-  image = imageio.imread(file)
+  #image = imageio.imread(file)
+  file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
+  opencv_image = cv2.imdecode(file_bytes, 1)
   emo_detector = FER(mtcnn=True)
-  captured_emotions = emo_detector.detect_emotions(image)
+  captured_emotions = emo_detector.detect_emotions(opencv_image)
 # Print all captured emotions with the image
   st.write(captured_emotions[0]['emotions'])
   #plt.imshow(image)
@@ -27,7 +29,7 @@ else:
   # Use the top Emotion() function to call for the dominant emotion in the image
   dominant_emotion, emotion_score = emo_detector.top_emotion(image)
   st.write(dominant_emotion, emotion_score)
-  st.image(image, use_column_width=True)
+  st.image(opencv_image, use_column_width=True)
 
 # In[ ]:
 
